@@ -1,4 +1,4 @@
-def dameNumero(num):
+def dameNumero(num1):
     if num > 0:
         print("este numero es mayor que 0")
     elif num < 0:
@@ -114,3 +114,179 @@ Conclusión:
 El bucle while es útil cuando no sabes de antemano cuántas veces quieres repetir un bloque de código, pero sí tienes una condición que debes cumplir para seguir iterando.
 Puedes controlar su comportamiento con break, continue y else para manejar distintos casos durante la ejecución.
 '''
+
+#simulacion del bucle do-while
+while True:
+    numero = int(input("Introduce un número positivo: "))
+
+    # El código dentro del "do" se ejecuta al menos una vez
+    if numero > 0:
+        print(f"Número ingresado: {numero}")
+        break  # Salir del bucle cuando la condición se cumple
+    else:
+        print("Por favor, introduce un número positivo.")
+
+'''
+Explicación:
+while True: El bucle es infinito, lo que significa que se ejecutará continuamente hasta que una condición interna lo detenga.
+if-else y break: Dentro del bucle, se verifica si el número es positivo. Si lo es, se ejecuta break para detener el bucle. Si no, el ciclo se repite.
+Esto simula el comportamiento de un do-while, ya que el código dentro del bucle se ejecuta al menos una vez.
+'''
+
+#otro ejemplo
+while True:
+    opcion = input("Escribe 'salir' para terminar: ")
+
+    if opcion == "salir":
+        print("Terminando el bucle.")
+        break  # Salir del bucle
+    else:
+        print("Todavía en el bucle.")
+
+
+
+#bucle for python
+listas = [1,2,3,4,5]
+
+for lista in listas:
+    print(lista)
+
+
+#bucle for con cadenas de texto
+texto = "Python"
+
+for letra in texto:
+    print(letra)
+
+# Salida:
+# P
+# y
+# t
+# h
+# o
+# n
+
+
+#bucle for con diccionarios
+mi_dict = {'a': 1, 'b': 2, 'c': 3}
+
+for clave in mi_dict:
+    print(clave)
+
+# Salida:
+# a
+# b
+# c
+#Si quieres iterar tanto sobre las claves como sobre los valores, puedes usar el método items():
+
+mi_dict = {'a': 1, 'b': 2, 'c': 3}
+
+for clave, valor in mi_dict.items():
+    print(f"Clave: {clave}, Valor: {valor}")
+
+# Salida:
+# Clave: a, Valor: 1
+# Clave: b, Valor: 2
+# Clave: c, Valor: 3
+
+#uso de range
+#range() es una función muy útil que genera una secuencia de números.
+# A menudo se usa con for para iterar un número específico de veces.
+
+'''
+range(inicio, fin, paso)
+inicio: El valor inicial (por defecto es 0).
+fin: El valor final, no inclusivo.
+paso: El valor a incrementar en cada iteración (por defecto es 1).
+'''
+for i in range(5):
+    print(i)
+
+# Salida:
+# 0
+# 1
+# 2
+# 3
+# 4
+
+#ejemplo de inicio y paso
+for i in range(1, 10, 2):
+    print(i)
+
+# Salida:
+# 1
+# 3
+# 5
+# 7
+# 9
+
+#for con el else
+for i in range(5):
+    print(i)
+else:
+    print("El bucle ha terminado.")
+
+# Salida:
+# 0
+# 1
+# 2
+# 3
+# 4
+# El bucle ha terminado.
+
+
+#for con el break
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+else:
+    print("El bucle ha terminado.")
+
+# Salida:
+# 0
+# 1
+# 2
+
+
+lista3 = ["jaimito", "pepito", 1, 2 ,3, 4, "fulanito"]
+
+for i in range(0, len(lista3), 1):
+    print(lista3[i])
+
+
+
+for indice, valor in enumerate(lista3):
+    print(indice, valor)
+
+
+'''
+Ejemplo con start:
+Puedes especificar un índice de inicio diferente si no quieres empezar desde 0
+'''
+frutas = ['manzana', 'banana', 'cereza']
+
+for indice, fruta in enumerate(frutas, start=1):
+    print(f"Índice: {indice}, Fruta: {fruta}")
+
+# Salida:
+# Índice: 1, Fruta: manzana
+# Índice: 2, Fruta: banana
+# Índice: 3, Fruta: cereza
+
+
+'''
+Modificar una lista mientras iteras: enumerate() es útil cuando necesitas modificar 
+o actualizar elementos en una lista basándote en su índice.
+
+Ejemplo: Cambiar todos los valores en posiciones pares de una lista:
+'''
+
+numeros = [10, 20, 30, 40, 50]
+
+for indice, numero in enumerate(numeros):
+    if indice % 2 == 0:  # Si el índice es par
+        numeros[indice] = numero * 2
+
+print(numeros)
+
