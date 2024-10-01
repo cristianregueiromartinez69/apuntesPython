@@ -94,6 +94,13 @@ class Punto2:
     def __str__(self):
         return "X: " + str(self.__x) + "\nY: " + str(self.__y)
 
+    def __eq__(self, p2):
+        if self.__x == p2.__x and self.__y == p2.__y:
+            return True
+        else:
+            return False
+
+
 punto2 = Punto2(2, 3)
 
 # Acceder a los atributos privados usando _Punto2__x y _Punto2__y
@@ -102,4 +109,8 @@ print(punto2._Punto2__coordenadas())
 
 punto2.y = 10
 print("Y es: " + str(punto2.y))
+
+p3 = Punto2(2,3)
+p4 = Punto2(2,3)
+print(p3.__eq__(p4))
 

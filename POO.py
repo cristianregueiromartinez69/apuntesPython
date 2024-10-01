@@ -35,3 +35,13 @@ print(punto1)
 
 punto1.x = 20
 print(punto1)
+
+'''
+metodos de la clase Object:
+__init__ -> similar al constructor
+__str__ -> similar al toString de java
+__new__ -> el constructor, cuando usamos init, llamamos a este metodo
+__del__ -> el destructor, similar a en C# eliminar variables por la memoria
+__len__ -> devuelve la longitud de un objeto
+__eq__ -> compara la posicion de memoria de 2 objetos 
+'''
