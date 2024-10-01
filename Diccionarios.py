@@ -70,6 +70,7 @@ python
 mi_dict = {'a': 1, 'b': 2}
 mi_dict.update({'b': 3, 'c': 4})
 print(mi_dict)  # Salida: {'a': 1, 'b': 3, 'c': 4}
+
 6. dict.pop(clave, valor_por_defecto):
 Elimina la clave especificada del diccionario y devuelve su valor. Si la clave no existe, devuelve el valor por defecto (o lanza una excepción si no se proporciona).
 
