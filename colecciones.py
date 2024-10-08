@@ -160,3 +160,5 @@ rango = range(5)
 lista_rango = list(rango)
 print(lista_rango)  # Salida: [0, 1, 2, 3, 4]
 '''
+
+
