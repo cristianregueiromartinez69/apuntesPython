@@ -1,4 +1,6 @@
 #funciones de orden superior, funciones que puedan devolver otras funciones
+from colecciones import lista
+
 
 def saludar(lengua):
     def saludo_en():
@@ -32,6 +34,11 @@ saludo = saludar("es")()
 area_cuadrado = lambda a: a*a
 print(area_cuadrado(10))
 
+nueva_lista4 = [(lambda lado : lado*lado)(lado) for lado in lista]
+print(nueva_lista4)
+
+
+
 def cuadrado(n):
     return n*n
 
@@ -49,8 +56,15 @@ m = ['a','b','c','d']
 n = [r*s for s in l
      for r in m
      if s > 0]
-
 print(n)
+
+p = []
+for s in l:
+    for r in m:
+        if s > 0:
+            p.append(s*r)
+
+print(p)
 
 
 
