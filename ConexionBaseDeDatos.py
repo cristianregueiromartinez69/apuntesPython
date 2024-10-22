@@ -42,3 +42,42 @@ except DatabaseError as e:
     print("Error al insertar datos en la tabla: " + str(e))
     bbdd.close()
 '''
+
+#hacemos select
+try:
+    cursor.execute("""select * from usuarios""")
+    bbdd.commit()
+except DatabaseError as e:
+    print("Error al consultar datos en la tabla: " + str(e))
+    bbdd.close()
+
+
+#vamos a consultar la consulta, nos la va a devolver en forma de tuplas
+for usuario in cursor.fetchall():
+    print("Dni: " + str(usuario[0]))
+    print("Nombre: " + str(usuario[1]))
+    print("Edad: : " + str(usuario[2]))
+
+'''
+ESTO NO ES SEGURO YA QUE TE PUEDEN HACER SQL INYECTION 
+try:
+    cursor.execute("select dni, nome, edade from usuarios where dni =" + "'123456789K'")
+    bbdd.commit()
+except DatabaseError as e:
+    print("Error al consultar datos en la tabla: " + str(e))
+    bbdd.close()
+
+print(cursor.fetchall())
+'''
+#consulta parametrizada
+'''
+Ponemos la ? y luego a continuación va una tupla que será igual al interrogante, la tupla será algo así ((informacion),)
+'''
+try:
+    cursor.execute("select dni, nome, edade from usuarios where dni = ? and edade = ?", ("123456789K",27))
+    bbdd.commit()
+except DatabaseError as e:
+    print("Error al consultar datos en la tabla: " + str(e))
+    bbdd.close()
+
+print(cursor.fetchall())
